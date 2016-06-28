@@ -2,7 +2,7 @@
  * Core configuration.
  *
  * @author    Team A  {@link http://hackrush.github.io}
- * @copyright Copyright (c) 2015, Team A 
+ * @copyright Copyright (c) 2015, Team A
  * @license   The MIT License {@link http://opensource.org/licenses/MIT}
  */
 (function () {
@@ -63,5 +63,5 @@
         .module('app.core')
         .config(onConfig)
         .run(onRun)
-        .constant('SERVER_API_URL', 'http://127.0.0.1:8082'); //192.168.0.100 - 172.20.10.3
+        .constant('SERVER_API_URL', 'http://127.0.0.1:8082'); //Replace With your url here
 })();
