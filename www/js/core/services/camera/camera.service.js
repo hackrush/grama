@@ -1,8 +1,8 @@
 /**
  * Camera service that takes and uploads image to server.
  *
- * @author    Denzel Wamburu {@link http://denzel.xyz}
- * @copyright Copyright (c) 2015, Denzel Wamburu
+ * @author    Team A  {@link http://hackrush.github.io}
+ * @copyright Copyright (c) 2015, Team A 
  * @license   The MIT License {@link http://opensource.org/licenses/MIT}
  */
 (function () {

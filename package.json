@@ -1,10 +1,10 @@
 {
-  "name": "Pichalink",
+  "name": "grama",
   "version": "1.0.0",
-  "description": "Share Cool Photos of Dekut",
+  "description": "Geotagging photo sharing app",
   "author": {
-    "name": "Denzel Wamburu",
-    "url": "http://denzel.xyz"
+    "name": "Team A",
+    "url": "http://hackrush.github.io"
   },
   "private": true,
   "scripts": {
@@ -13,10 +13,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/denzelwamburu/pichalink"
+    "url": "https://github.com/hackrush/grama"
   },
   "bugs": {
-    "url": "https://github.com/denzelwamburu/pichalink/issues"
+    "url": "https://github.com/hackrush/grama/issues"
   },
   "devDependencies": {
     "gulp": "^3.5.6",

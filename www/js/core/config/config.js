@@ -1,8 +1,8 @@
 /**
  * Core configuration.
  *
- * @author    Denzel Wamburu {@link http://denzel.xyz}
- * @copyright Copyright (c) 2015, Denzel Wamburu
+ * @author    Team A  {@link http://hackrush.github.io}
+ * @copyright Copyright (c) 2015, Team A 
  * @license   The MIT License {@link http://opensource.org/licenses/MIT}
  */
 (function () {
@@ -10,8 +10,8 @@
 
     /* @ngInject */
     function onConfig($urlRouterProvider, RestangularProvider, localStorageServiceProvider, SERVER_API_URL) {
-        // use "pichalink" as a localStorage name prefix so app doesn’t accidently read data from another app using the same variable names
-        localStorageServiceProvider.setPrefix('pichalink');
+        // use "grama" as a localStorage name prefix so app doesn’t accidently read data from another app using the same variable names
+        localStorageServiceProvider.setPrefix('grama');
 
         // set material design template
         //$mdThemingProvider.theme('default')

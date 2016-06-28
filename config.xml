@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.pichalink" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>pichalink</name>
+<widget id="com.grama.a" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>grama</name>
   <description>
       Share cool photos of your university
     </description>
-  <author email="denzjoseph@gmail.com" href="http://denzel.xyz/">
-        Denzel Wamburu
+  <author email="youremail@url.com" href="http://hackrush.github.io/">
+        Team A
     </author>
   <content src="index.html"/>
   <access origin="*"/>
