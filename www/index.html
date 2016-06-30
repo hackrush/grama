@@ -1,75 +1,180 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <!--<base href="/">-->
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+    <!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="lib/angular-material/angular-material.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <head>
+        <link rel="stylesheet" type="text/css" href="icon-fonts/elusive-icons-2.0.0/css/elusive-icons.css">
+        <link rel="stylesheet" type="text/css" href="icon-fonts/font-awesome-4.3.0/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+        <meta charset="UTF-8">
+        <title>Gramma App</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
+        <!--
+  * The "meta viewport" tag (below) helps your app size appropriately to a device's ideal viewport.
+  * Note that Windows device viewports work better when initialized using the @viewport CSS rule.
+  * For a quick overview of "meta viewport" and @viewport, see this article:
+  *   http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag
+  * To see how it works, try your app on a real device with and without a "meta viewport" tag.
+  * Additional useful references include:
+  *   http://www.quirksmode.org/mobile/viewports.html
+  *   http://www.quirksmode.org/mobile/metaviewport/devices.html
+  *   https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
+-->
 
-</head>
-    <body ng-app="app">
-        <ion-nav-view></ion-nav-view>
+        <!-- <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1"> -->
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
 
-        <!-- ionic/angularjs js -->
-        <script src="lib/ionic/js/ionic.bundle.js"></script>
-        <!--<script src="lib/angular/angular.js"></script>-->
-        <!--<script src="lib/angular-animate/angular-animate.js"></script>-->
-        <!--<script src="lib/angular-sanitize/angular-sanitize.js"></script>-->
-        <!--<script src="lib/angular-ui-router/release/angular-ui-router.js"></script>-->
-        <!--<script src="lib/ionic/js/ionic.js"></script>-->
-        <!--<script src="lib/ionic/js/ionic-angular.js"></script>-->
-        <script src="lib/lodash/dist/lodash.compat.js"></script>
-        <script src="lib/restangular/dist/restangular.js"></script>
-        <script src="lib/angular-local-storage/dist/angular-local-storage.js"></script>
-        <script src="lib/angular-aria/angular-aria.js"></script>
-        <script src="lib/angular-messages/angular-messages.js"></script>
-        <!--<script src="lib/angular-material/angular-material.js"></script>-->
+        <style>
+            /* following three (cascaded) are equivalent to above three meta viewport statements */
+            /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
+            /* see http://dev.w3.org/csswg/css-device-adapt/ */
+                @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100%; zoom: 100% ; }
+                @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+                /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+        </style>
 
-        <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+        <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
 
-        <!-- cordova script (this will be a 404 during development) -->
-        <script src="cordova.js"></script>
+        <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
+        <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work below -->
+        <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
 
-        <!-- your app's js -->
+        <!-- Recommended location for your JavaScript libraries -->
+        <!-- These library references (below) are just examples to give you the general idea... -->
+        <!-- <script src="lib/mc/hammer.js"></script> -->
+        <!-- <script src="lib/ft/fastclick.js"></script> -->
+
+        <!--
+  * cordova.js is a phantom lib for "Cordova HTML5 web app," it does nothing in a "Standard HTML5 web app"
+  * Seeing a "Failed to load resource: net::ERR_FILE_NOT_FOUND" message caused by this "cordova.js" script?
+  * The cordova.js script is required if you convert your "Standard HTML5" project into a "Cordova" project.
+  * You can safely ignore the error or comment out this line if you will not be developing a Cordova app.
+-->
+        <script src="cordova.js" id="xdkJScordova_"></script>
+
         <script src="js/app.js"></script>
-        <script src="js/core/core.js"></script>
-        <script src="js/core/config/config.js"></script>
-        <script src="js/core/services/user/user.service.js"></script>
-        <script src="js/core/services/image/image.service.js"></script>
-        <script src="js/core/services/camera/camera.service.js"></script>
-        <script src="js/core/services/authentication/authentication.service.js"></script>
-        <script src="js/core/services/authentication/base64.service.js"></script>
-        <script src="js/core/services/authentication/interceptor.service.js"></script>
-        <script src="js/core/services/authentication/token.service.js"></script>
-        <script src="js/core/services/error/error.service.js"></script>
-        <script src="js/routes/layout/layout.js"></script>
-        <script src="js/routes/layout/layout.route.js"></script>
-        <script src="js/routes/layout/layout.controller.js"></script>
-        <script src="js/routes/gallery/gallery.js"></script>
-        <script src="js/routes/gallery/gallery.route.js"></script>
-        <script src="js/routes/gallery/gallery.controller.js"></script>
-        <script src="js/routes/galleries/galleries.js"></script>
-        <script src="js/routes/galleries/galleries.route.js"></script>
-        <script src="js/routes/galleries/galleries.controller.js"></script>
-        <script src="js/routes/signin/signin.js"></script>
-        <script src="js/routes/signin/signin.route.js"></script>
-        <script src="js/routes/signin/signin.controller.js"></script>
-        <script src="js/routes/signup/signup.js"></script>
-        <script src="js/routes/signup/signup.route.js"></script>
-        <script src="js/routes/signup/signup.controller.js"></script>
-        <script src="js/routes/user/user.js"></script>
-        <script src="js/routes/user/user.route.js"></script>
-        <script src="js/routes/user/user.controller.js"></script>
-        <script src="js/routes/users/users.js"></script>
-        <script src="js/routes/users/users.route.js"></script>
-        <script src="js/routes/users/users.controller.js"></script>
+        <!-- for your event code, see README and file comments for details -->
+        <script src="js/init-app.js"></script>
+        <!-- for your init code, see README and file comments for details -->
+        <script src="xdk/init-dev.js"></script>
+        <!-- normalizes device and document ready events, see file for details -->
+        <script type="application/javascript" src="lib/jquery.min.js"></script>
+        <script type="application/javascript" src="marginal/marginal-position.min.js"></script>
+        <script type="application/javascript" src="js/index_user_scripts.js"></script>
+        <script type="application/javascript" src="xdk/ad/bs_subpage.js"></script>
+    </head>
+
+    <body>
+        <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
+        <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work above -->
+        <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
+        <div class="upage" id="mainpage">
+            <div class="upage-outer">
+                <div class="uib-header header-bg container-group inner-element uib_w_1 uib-header-fixed" data-uib="layout/header" data-ver="0" id="mainHeader">
+                    <h2>GRAMA</h2>
+                    <div class="widget-container wrapping-col single-centered"></div>
+                    <div class="widget-container content-area horiz-area wrapping-col left"></div>
+                    <div class="widget-container content-area horiz-area wrapping-col right"></div>
+                </div>
+                <div class="upage-content ac0 content-area vertical-col left" id="page_57_37">
+                    <div class="grid grid-pad urow uib_row_2 row-height-2" data-uib="layout/row" data-ver="0">
+                        <div class="col uib_col_2 col-0_12-12" data-uib="layout/col" data-ver="0">
+                            <div class="widget-container content-area vertical-col">
+                                <span class="uib_shim"></span>
+                            </div>
+                        </div>
+                        <span class="uib_shim"></span>
+                    </div>
+
+                    <button class="btn widget uib_w_2 d-margins btn-lg btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="btnFacebookLogin">Login with Facebook <i class="fa fa-facebook-square button-icon-right" data-position="right"></i>
+                    </button>
+                    <button class="btn widget uib_w_3 d-margins btn-lg btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="btnTwitterLogin">Login with Twitter<i class="fa fa-twitter button-icon-right" data-position="right"></i>
+                    </button>
+                    <button class="btn widget uib_w_14 d-margins btn-lg btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="btnLoc">Where Am I?<i class="el el-map-marker button-icon-right" data-position="right"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+        <div class="upage hidden" id="photosPage">
+            <div class="upage-outer">
+                <div class="uib-header header-bg container-group inner-element uib_w_4" data-uib="layout/header" data-ver="0" id="mainHeader">
+                    <h2>GRAMA</h2>
+                    <div class="widget-container wrapping-col single-centered"></div>
+                    <div class="widget-container content-area horiz-area wrapping-col left"></div>
+                    <div class="widget-container content-area horiz-area wrapping-col right"></div>
+                </div>
+                <div class="upage-content ac0 content-area vertical-col left" id="page_33_80">
+                    <div class="grid grid-pad urow uib_row_3 row-height-3 rowPadding" data-uib="layout/row" data-ver="0">
+                        <div class="col uib_col_3 col-0_12-12" data-uib="layout/col" data-ver="0">
+                            <div class="widget-container content-area vertical-col">
+                                <div class="widget uib_w_10 scale-image d-margins" data-uib="media/img" data-ver="0">
+                                    <figure class="figure-align">
+                                        <img src="images/Alien.png" id="smallImage">
+
+                                        <figcaption data-position="bottom"></figcaption>
+                                    </figure>
+                                </div>
+                                <div class="table-thing widget uib_w_11 d-margins" data-uib="twitter%20bootstrap/text_area" data-ver="1">
+                                    <label class="narrow-control label-top-left">Caption</label>
+                                    <textarea rows="2" class="wide-control form-control" wrap="soft" placeholder="Best Photo" name="imageCaption" id="imgCaption"></textarea>
+                                </div>
+                                <div class="tarea widget uib_w_12 d-margins" data-uib="media/text" data-ver="0" name="uib_w_12" id="txtLocation">
+                                    <div class="widget-container left-receptacle"></div>
+                                    <div class="widget-container right-receptacle"></div>
+                                    <div class="text-container"></div>
+                                </div>
+                                <button class="btn widget uib_w_13 d-margins btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1"><i class="fa fa-send" data-position="icon only"></i>
+                                </button>
+                                <span class="uib_shim"></span>
+                            </div>
+                        </div>
+                        <span class="uib_shim"></span>
+                    </div>
+                </div>
+                <div class="uib-footer uib-footer-fixed footer-bg container-group inner-element uib_w_5" data-uib="layout/footer" data-ver="0">
+                    <h2></h2>
+                    <div class="widget-container wrapping-col single-centered">
+                        <!-- <button class="btn widget uib_w_6 d-margins btn-lg btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="btnPhoto"><i class="fa fa-camera" data-position="icon only"></i>
+                        </button> -->
+                        <div class="btn-group uib-bs-flex widget uib_w_6 d-margins" data-uib="twitter%20bootstrap/button_group" data-ver="1">
+                            <button class="btn widget uib_w_7 btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="btnImport"><i class="fa fa-file-photo-o" data-position="icon only"></i>
+                            </button>
+                            <button class="btn widget uib_w_8 btn-primary" onclick="capturePhoto()" data-uib="twitter%20bootstrap/button" data-ver="1" id="btnPhoto"><i class="fa fa-camera" data-position="icon only"></i>
+                            </button>
+                            <button class="btn widget uib_w_9 btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="btnVideo"><i class="fa fa-video-camera" data-position="icon only"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="widget-container content-area horiz-area wrapping-col left"></div>
+                    <div class="widget-container content-area horiz-area wrapping-col right"></div>
+                </div>
+            </div>
+        </div>
+        <div class="upage vertical-col left hidden" id="map">
+              <style type="text/css">
+                #map {
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  width: 100%;
+                }
+            </style>
+          <div id="map"></div>
+
+              <script src="https://api.tiles.mapbox.com/mapbox.js/v2.1.6/mapbox.js"></script>
+              <script src="https://cdn.firebase.com/js/client/2.2.3/firebase.js"></script>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.7.0/lodash.min.js"></script>
+              <script src="/www/js/config.js"></script>
+              <script src="/www/js/app.js"></script>
+            
+        </div>
     </body>
+
 </html>
