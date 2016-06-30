@@ -1,15 +1,7 @@
-# ignore Cordova/PhoneGap CLI directories
-# in essence, everything but *.xdk file and www directory
-/*
-!/www
-!/docs
-!/config.xml
-!/README.md
-!/LICENSE.md
-!/intelxdk.config.additions.xml
-!/*.xdk
-!/.gitignore
-!/.jscodehints
-!/app.json
-!/screenshot.png
-!/icon.png
+# Specifies intentionally untracked files to ignore when using Git
+# http://git-scm.com/docs/gitignore
+
+node_modules/
+platforms/
+plugins/
+www/lib
